@@ -1,6 +1,9 @@
 ARG BASE=node:20.18.0
 FROM ${BASE} AS base
 
+# Actualizar Corepack a la última versión
+RUN npm install -g corepack@latest
+
 WORKDIR /app
 
 # Install dependencies (this step is cached as long as the dependencies don't change)
